@@ -10,8 +10,6 @@
       <div>
       <h2>敬业科技</h2>
       </div>
-      <el-backtop target=".page-component__scroll .el-scrollbar__wrap" visibility-height = 100></el-backtop>
-
     <div class="img-box">
       <img src="/static/img/home1.jpg" alt="company-concept">
     </div>
@@ -94,32 +92,32 @@ export default {
         this.dataSource = [
           {
             id: 'product1',
-            imgSrc: '/static/img/stone1.jpg',
+            imgSrc: '/static/img/product1.jpg',
             label: '产品名称'
           },
           {
             id: 'product2',
-            imgSrc: '/static/img/stone2.jpg',
+            imgSrc: '/static/img/product2.jpg',
             label: '产品名称'
           },
           {
             id: 'product3',
-            imgSrc: '/static/img/stone1.jpg',
+            imgSrc: '/static/img/product1.jpg',
             label: '产品名称'
           },
           {
             id: 'product4',
-            imgSrc: '/static/img/stone2.jpg',
+            imgSrc: '/static/img/product2.jpg',
             label: '产品名称'
           },
           {
             id: 'product5',
-            imgSrc: '/static/img/stone1.jpg',
+            imgSrc: '/static/img/product1.jpg',
             label: '产品名称'
           },
           {
             id: 'product6',
-            imgSrc: '/static/img/stone2.jpg',
+            imgSrc: '/static/img/product2.jpg',
             label: '产品名称'
           }
         ]

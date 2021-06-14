@@ -3,7 +3,7 @@
     <el-main>
       <el-row :gutter="10">
         <el-col :span="8" v-for="item in dataSource" :key="item.id">
-          <el-button @click="centerDialogVisible = true">
+          <el-button @click="handleClick(item)">
             <el-card :body-style="{ padding: '0px' }" shadow="hover" >
               <img :src="item.imgSrc" class="image">
               <div style="padding: 14px;">
@@ -20,11 +20,11 @@
     <el-dialog
       title="产品介绍"
       :visible.sync="centerDialogVisible"
-      v-for="item in dataSource" :key="item.id"
       :show-close="false"
       :center="true"
+      @open="openDialog"
       :before-close="handleClose">
-      <img :src="item.imgSrc" class="image">
+      <img :src="item.oneItem" class="image">
       <span style="padding: 10px;">这是详情描述</span>
       <span slot="footer" class="dialog-footer">
 <!--    <el-button @click="dialogVisible = false">取 消</el-button>-->
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 export default {
   name: 'ListPage',
   props: {
@@ -44,10 +46,15 @@ export default {
       required: true
     }
   },
+
   data() {
     return {
-      centerDialogVisible: false
+      centerDialogVisible: false,
+      item:{
+        oneItem:null
+      }
     };
+
   },
   methods: {
     handleClose(done) {
@@ -56,7 +63,16 @@ export default {
            done();
       //   })
       //   .catch(_ => {});
+    },
+    handleClick(inItem){
+      this.centerDialogVisible = true;
+      this.$set(this.item, 'oneItem', inItem.imgSrc)
+
     }
+
+  },
+  computed:{
+
   }
 }
 </script>
